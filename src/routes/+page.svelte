@@ -120,7 +120,7 @@
 				</div>
 			{/if}
 		{:else if $testRecord.length !== 0}
-			{#each $testRecord as record}
+			{#each $testRecord.filter((record) => record.total_count !== null) as record}
 				<div
 					class="mt-4 rounded-xl min-w-[16rem] shadow-lg border flex flex-col gap-3 items-stretch self-start overflow-hidden"
 				>
@@ -248,7 +248,7 @@
 				</div>
 			{/if}
 		{:else if $practiceRecord.length !== 0}
-			{#each $practiceRecord as record}
+			{#each $practiceRecord.filter((record) => record.total_count !== null) as record}
 				<div
 					class="mt-4 rounded-xl min-w-[16rem] shadow-lg border flex flex-col gap-3 items-stretch self-start overflow-hidden"
 				>
