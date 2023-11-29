@@ -10,7 +10,7 @@
 
 	let {
 		data: { publicUrl }
-	} = $supabaseStore?.storage.from('test').getPublicUrl('Event.jpg')!;
+	} = $supabaseStore?.storage.from('notice').getPublicUrl('Event.jpg')!;
 	fetchExplore();
 	function fetchExplore() {
 		$supabaseStore
@@ -38,9 +38,12 @@
 		$supabaseStore?.auth.getUser().then((res) => console.log(res));
 		if (files && files.length === 1)
 			$supabaseStore?.storage
-				.from('test')
+				.from('notice')
 				.upload('Event.jpg', files[0], { upsert: true })
-				.then((res) => console.log(res));
+				.then((res) => {
+					console.log(res);
+					publicUrl = publicUrl + '?' + new Date().getTime();
+				});
 	}
 </script>
 

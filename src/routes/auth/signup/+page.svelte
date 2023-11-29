@@ -188,3 +188,11 @@
 		>이미 계정이 있으신가요? 로그인 하러가기</a
 	>
 </form>
+
+<style>
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+</style>

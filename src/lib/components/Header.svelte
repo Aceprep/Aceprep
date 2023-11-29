@@ -31,12 +31,20 @@
 			</button>
 
 			{#if isUserModalOpen}
-				<div class=" absolute bg-white top-[3rem] rounded border shadow flex flex-col">
+				<div
+					class=" absolute bg-white top-[100%] right-0 w-[8rem] rounded border shadow flex flex-col"
+				>
 					<button
 						on:click={() => $supabaseStore?.auth.signOut().then(() => goto('/auth/signin'))}
 						class=" z-10 p-2 hover:bg-primary-focus hover:text-white"
 					>
 						Sign out</button
+					>
+					<a
+						href="/auth/passwordchange"
+						class=" z-10 p-2 text-center hover:bg-primary-focus hover:text-white"
+					>
+						비밀번호 변경</a
 					>
 				</div>
 				<button

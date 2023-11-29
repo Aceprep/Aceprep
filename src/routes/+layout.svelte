@@ -12,7 +12,7 @@
 	acePrepUserStore.set(data.user);
 	supabaseStore.set(data.supabase);
 	data.supabase.auth.onAuthStateChange((event, session) => {
-		console.log('자 Persistent 세션은 어떻게 되나 보자고', event, session);
+		// console.log('자 Persistent 세션은 어떻게 되나 보자고', event, session);
 		if (event === 'INITIAL_SESSION' && session?.user) {
 			data.supabase
 				.from('User')
