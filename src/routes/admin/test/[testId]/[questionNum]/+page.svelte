@@ -66,7 +66,7 @@
 		<TestHeader enableMore={false}>
 			<label slot="title">
 				Title:
-				<input bind:value={$test.title} class="rounded text-xl font-semibold" />
+				<input bind:value={$test.title} class="rounded text-xl font-semibold w-[70%]" />
 			</label>
 			<label slot="type">
 				Type:
