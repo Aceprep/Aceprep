@@ -12,7 +12,7 @@
 	let isChoiceEliminationOn: boolean = false;
 </script>
 
-<div class="flex-1 flex flex-col gap-2">
+<div class="flex-1 flex flex-col gap-2 overflow-y-auto">
 	<div class="self-stretch flex bg-gray-100">
 		<div class="flex items-center justify-center p-2 bg-gray-900">
 			<p class=" text-white font-bold text-xl">{Number($page.params.questionNum) + 1}</p>

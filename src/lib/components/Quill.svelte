@@ -54,6 +54,15 @@
 			modules: {
 				toolbar: toolbarOptions,
 				imageUploader: {
+					// upload: (file: File) => {
+					// 	return new Promise((resolve, reject) => {
+					// 		setTimeout(() => {
+					// 			resolve(
+					// 				'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/480px-JavaScript-logo.png'
+					// 			);
+					// 		}, 500);
+					// 	});
+					// }
 					upload: async (file: File) => {
 						console.log('file', file);
 						const { data, error } = await $supabaseStore!.storage
@@ -66,10 +75,11 @@
 						console.log('path', data.path);
 						const {
 							data: { publicUrl }
-						} = await $supabaseStore?.storage.from('test_pictures').getPublicUrl(data.path)!;
+						} = $supabaseStore!.storage.from('test_pictures').getPublicUrl(data.path)!;
 						console.log('publicUrl', publicUrl);
 
 						return publicUrl;
+						// return 'https://plus.unsplash.com/premium_photo-1674841253285-77e02800a6ab?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 					}
 				}
 			},

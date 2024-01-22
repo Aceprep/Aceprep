@@ -9,6 +9,7 @@
 	import TestEditAnswer from '$lib/components/test/TestEditAnswer.svelte';
 	import Quill from '$lib/components/Quill.svelte';
 	import { onDestroy } from 'svelte';
+	import { watch } from 'vue';
 	export let data;
 	$: console.log($page.params);
 
@@ -47,6 +48,11 @@
 				return choice;
 			}
 		});
+	}
+	let choiceIntro: HTMLTextAreaElement;
+	$: if (choiceIntro) {
+		choiceIntro.style.height = '0px';
+		choiceIntro.style.height = choiceIntro.scrollHeight + 'px';
 	}
 </script>
 
@@ -93,7 +99,9 @@
 					<textarea
 						slot="choice_intro"
 						bind:value={$question.choice_intro}
-						class="w-full h-auto p-4"
+						class="w-full h-fit p-4"
+						oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"
+						bind:this={choiceIntro}
 					/>
 					<div class="ChoiceGroup flex flex-col gap-2" slot="choice">
 						{#each $question.Choice as choice, index}
