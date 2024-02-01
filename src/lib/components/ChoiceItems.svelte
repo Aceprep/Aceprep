@@ -41,7 +41,7 @@
 						<input type="radio" value={choice.id} bind:group={correctId} class="flex-1" />
 					</label>
 				{:else}
-					<p>{choice.choice}</p>
+					<p class="text-sm text-left">{choice.choice}</p>
 				{/if}
 			</button>
 

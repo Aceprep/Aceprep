@@ -197,7 +197,7 @@
 		</TestHeader>
 		{#if question && student_answer}
 			<div class="w-full border-b-2 border-primary" />
-			<div class="flex gap-2 h-[600px]">
+			<div class="flex gap-2 h-[700px]">
 				<div class="flex-1 h-full ql-snow">
 					<div class="ql-editor">
 						{@html question?.paragraph ?? ''}
